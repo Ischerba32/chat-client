@@ -9,8 +9,6 @@ import {
   useMutation,
 } from "@apollo/client";
 
-
-
 const Chat = () => {
   const [userState, setUserState] = React.useState({
     user: 'John',
@@ -33,7 +31,9 @@ const Chat = () => {
 
   return (
     <Container>
-      <Messages user={userState.user} />
+      <Container>
+        <Messages user={userState.user} />
+      </Container>
       <Row>
           <Col xs={2}>
             <Form.Control

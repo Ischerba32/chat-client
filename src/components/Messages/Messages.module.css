@@ -1,0 +1,21 @@
+.message {
+  display: flex;
+  padding-bottom: 1em;
+}
+
+.message__avatar {
+  height: 50px;
+  width: 50px;
+  margin-right: 0.5em;
+  border: 2px solid #e5e6ea;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 18pt;
+  padding-top: 9px;
+}
+
+.message__content {
+  padding: 1em;
+  border-radius: 1em;
+  max-width: 60%;
+}

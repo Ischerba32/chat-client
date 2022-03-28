@@ -4,8 +4,17 @@ import {
   gql
 } from "@apollo/client";
 
+import { WebSocketLink } from "@apollo/client/link/ws"
+
+const link = new WebSocketLink({
+  uri: `ws://localhost:4000/`,
+  options: {
+    reconnect: true,
+  }
+})
+
 export const GET_MESSAGES = gql`
-  query {
+  subscription {
     messages {
       id
       content
@@ -21,6 +30,7 @@ export const POST_MESSAGES = gql`
 `;
 
 export const client = new ApolloClient({
-  uri: 'http://localhost:4000',
+  link,
+  uri: 'http://localhost:4000/',
   cache: new InMemoryCache()
 });
