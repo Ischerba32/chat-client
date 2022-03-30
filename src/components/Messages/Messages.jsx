@@ -1,10 +1,9 @@
 import { useSubscription } from "@apollo/client";
 import React from "react";
-import { data, GET_MESSAGES } from "../../apollo";
+import { GET_MESSAGES } from "../../apollo";
 import styles from "./Messages.module.css"
 
-const Messages = ({user}) => {
-  const { data } = useSubscription(GET_MESSAGES);
+const Messages = ({user, data}) => {
 
   if(!data) {
     return null;
